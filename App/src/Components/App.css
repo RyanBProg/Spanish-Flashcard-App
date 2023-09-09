@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;900&display=swap");
+
+:root {
+  --clr-main: linear-gradient(
+    90deg,
+    rgba(255, 122, 0, 1) 50%,
+    rgba(252, 164, 69, 1) 100%
+  );
+  --clr-white: #fff;
+  --clr-white-off: #ededed;
+  --clr-black: #000;
+  --clr-black-off: #232323;
+
+  --shad-black: 2px 2px 10px 2px #000;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6rem;
+  background: var(--clr-white-off);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.header {
+  background: var(--clr-main);
+}
+
+.header-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+}
+
+.form-select-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-label {
+  color: var(--clr-white-off);
+}
+
+.form-select {
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  border-radius: 10px;
+  color: var(--clr-black-off);
+  border: 2px solid var(--clr-black-off);
+  background-color: var(--clr-white-off);
+}
+
+/* card container */
+.card-container {
+  margin: 3rem auto;
+  height: 400px;
+  width: 300px;
+  border: 3px solid var(--clr-black);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shad-black);
+  background: var(--clr-main);
+  color: var(--clr-white-off);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container:hover {
+  transform: scale(1.01);
+}
+
+.card-word-txt {
+  padding-top: 120px;
+  font-size: 2rem;
+}
+
+.reveal-btn {
+  background-color: var(--clr-main);
+  height: 30px;
+  width: 150px;
+}
+
+.reveal-btn:hover {
+  background-color: var(--clr-black-off);
+  cursor: pointer;
+}
+
+/* controls */
+.controls-container {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  width: 90%;
+  border-radius: 10px;
+  background-color: var(--clr-black-off);
+  color: var(--clr-white-off);
+}
+
+.controls-btn,
+.reveal-btn {
+  border: 2px solid var(--clr-white-off);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--clr-white-off);
+}
+
+.controls-btn {
+  margin: 0 20px 10px 20px;
+  height: 30px;
+  width: 150px;
+}
+
+.correct-btn {
+  background-color: rgb(54, 200, 54);
+}
+
+.correct-btn:hover {
+  background-color: rgb(0, 170, 0);
+  cursor: pointer;
+}
+
+.incorrect-btn {
+  background-color: rgb(243, 49, 49);
+}
+
+.incorrect-btn:hover {
+  background-color: rgb(213, 1, 1);
+  cursor: pointer;
+}
+
+.counters {
+  margin-top: 10px;
+}
+
+/* footer */
+.footer {
+  background: var(--clr-main);
+  height: 100px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-link {
+  position: relative;
+  top: 40%;
+  text-decoration: none;
+  color: var(--clr-white-off);
+}
