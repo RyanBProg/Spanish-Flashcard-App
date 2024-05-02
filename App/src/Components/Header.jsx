@@ -1,16 +1,14 @@
 import React from "react";
 
-export default function Header(props) {
+const Header = ({ flashcardCategories, handleCategoryChange }) => {
   return (
     <header className="header">
       <form action="" className="header-form">
         <div className="form-select-container">
           <label htmlFor="flashcard-category" className="form-label">
             Select Flashcard Category
-            <select
-              className="form-select"
-              onChange={props.handleCategoryChange}>
-              {props.flashcardCategories.map((item) => (
+            <select className="form-select" onChange={handleCategoryChange}>
+              {flashcardCategories.map((item) => (
                 <option value={item.name} key={item.name}>
                   {item.name}
                 </option>
@@ -21,4 +19,6 @@ export default function Header(props) {
       </form>
     </header>
   );
-}
+};
+
+export default Header;
