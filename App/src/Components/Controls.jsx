@@ -1,20 +1,28 @@
 import React from "react";
 
-const Controls = ({ handleCorrectAnswer, handleIncorrectAnswer, state }) => {
+const Controls = ({ state, dispatch }) => {
   return (
     <div className="controls-container">
       <button
+        disabled={state.gameFinished}
         className="controls-btn correct-btn"
-        onClick={handleCorrectAnswer}>
+        onClick={() => {
+          dispatch({ type: "answered_correct" });
+        }}>
         Correct
       </button>
       <button
+        disabled={state.gameFinished}
         className="controls-btn incorrect-btn"
-        onClick={handleIncorrectAnswer}>
+        onClick={() => {
+          dispatch({ type: "answered_incorrect" });
+        }}>
         Incorrect
       </button>
-      <p className="counters">Correct Count: {state.score}</p>
-      <p className="counters">Completed: {state.wordIndex} out of 0</p>
+      <p className="counters">Score: {state.score}</p>
+      <p className="counters">
+        Card {state.wordIndex + 1} out of {state.deckSize}
+      </p>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Header = ({ categoryData, dispatch }) => {
                   deckIndex: e.target.selectedIndex,
                 });
               }}>
-              {categoryData.map((item, index) => (
+              {categoryData.map((item) => (
                 <option value={item.name} key={item.name}>
                   {item.name}
                 </option>

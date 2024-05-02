@@ -1,5 +1,8 @@
+import categoryData from "../Components/categoryData.json";
+
 const gameInitalState = {
   categoryIndex: 0,
+  deckSize: 0,
   wordIndex: 0,
   score: 0,
   gameFinished: false,
@@ -10,17 +13,17 @@ const gameReducer = (state, action) => {
     case "category_chosen":
       return {
         categoryIndex: action.deckIndex,
+        deckSize: categoryData[action.deckIndex].words.length,
         wordIndex: 0,
         score: 0,
         gameFinished: false,
       };
     case "answered_correct":
       // set game finished when answering last question
-      if (state.wordIndex === state.deckSize - 2) {
+      if (state.wordIndex === state.deckSize - 1) {
         return {
           ...state,
           score: state.score + 1,
-          wordIndex: state.wordIndex + 1,
           gameFinished: true,
         };
       } else {
@@ -32,10 +35,9 @@ const gameReducer = (state, action) => {
       }
     case "answered_incorrect":
       // set game finished when answering last question
-      if (state.wordIndex === state.deckSize - 2) {
+      if (state.wordIndex === state.deckSize - 1) {
         return {
           ...state,
-          wordIndex: state.wordIndex + 1,
           gameFinished: true,
         };
       } else {

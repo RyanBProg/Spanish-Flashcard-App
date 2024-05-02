@@ -2,7 +2,6 @@
   {
     "name": "99 Common Spanish Words",
     "description": "99 most common spanish words",
-    "size": 99,
     "words": [
       { "spanWord": "el", "engTranslation": "the" },
       { "spanWord": "de", "engTranslation": "of" },
@@ -108,7 +107,6 @@
   {
     "name": "20 Spanish Greetings",
     "description": "20 most common spanish greetings",
-    "size": 20,
     "words": [
       { "spanWord": "hola", "engTranslation": "hello" },
       { "spanWord": "buenos días", "engTranslation": "good morning" },
@@ -138,7 +136,6 @@
   {
     "name": "30 Spanish Food Words",
     "description": "30 common words to do with food in spanish",
-    "size": 30,
     "words": [
       { "spanWord": "comida", "engTranslation": "food" },
       { "spanWord": "bebida", "engTranslation": "drink" },
@@ -176,7 +173,6 @@
   {
     "name": "54 Spanish Number Words",
     "description": "54 common number words in Spanish",
-    "size": 54,
     "words": [
       { "spanWord": "cero", "engTranslation": "zero" },
       { "spanWord": "uno", "engTranslation": "one" },
@@ -238,7 +234,6 @@
   {
     "name": "30 Spanish Navigational Words",
     "description": "30 of the most common navigational words in spanish",
-    "size": 30,
     "words": [
       { "spanWord": "izquierda", "engTranslation": "left" },
       { "spanWord": "derecha", "engTranslation": "right" },
@@ -275,7 +270,6 @@
   {
     "name": "48 Spanish Household Words",
     "description": "48 words to describe the house in spanish",
-    "size": 48,
     "words": [
       { "spanWord": "casa", "engTranslation": "house" },
       { "spanWord": "puerta", "engTranslation": "door" },
@@ -330,7 +324,6 @@
   {
     "name": "30 Spanish Clothing Words",
     "description": "30 of the most common words for clothing items in spanish",
-    "size": 30,
     "words": [
       { "spanWord": "camisa", "engTranslation": "shirt" },
       { "spanWord": "pantalón", "engTranslation": "pants" },
@@ -368,7 +361,6 @@
   {
     "name": "30 Spanish Descriptive Words",
     "description": "30 of the most common words for describing people",
-    "size": 30,
     "words": [
       { "spanWord": "alto/a", "engTranslation": "tall" },
       { "spanWord": "bajo/a", "engTranslation": "short" },
