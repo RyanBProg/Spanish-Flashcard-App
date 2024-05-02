@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Controls(props) {
+const Controls = ({
+  correctAns,
+  incorrectAns,
+  score,
+  completedCounter,
+  deckSize,
+}) => {
   return (
     <div className="controls-container">
-      <button className="controls-btn correct-btn" onClick={props.correctAns}>
+      <button className="controls-btn correct-btn" onClick={correctAns}>
         Correct
       </button>
-      <button
-        className="controls-btn incorrect-btn"
-        onClick={props.incorrectAns}>
+      <button className="controls-btn incorrect-btn" onClick={incorrectAns}>
         Incorrect
       </button>
-      <p className="counters">Correct Count: {props.score}</p>
+      <p className="counters">Correct Count: {score}</p>
       <p className="counters">
-        Completed: {props.completedCounter} out of {props.deckSize}
+        Completed: {completedCounter} out of {deckSize}
       </p>
     </div>
   );
-}
+};
+
+export default Controls;
