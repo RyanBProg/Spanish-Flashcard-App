@@ -1,14 +1,21 @@
 import React from "react";
 
-const Header = ({ categoryData, handleCategoryChange }) => {
+const Header = ({ categoryData, dispatch }) => {
   return (
     <header className="header">
       <form action="" className="header-form">
         <div className="form-select-container">
           <label htmlFor="flashcard-category" className="form-label">
             Select Flashcard Category
-            <select className="form-select" onChange={handleCategoryChange}>
-              {categoryData.map((item) => (
+            <select
+              className="form-select"
+              onChange={(e) => {
+                dispatch({
+                  type: "category_chosen",
+                  deckIndex: e.target.selectedIndex,
+                });
+              }}>
+              {categoryData.map((item, index) => (
                 <option value={item.name} key={item.name}>
                   {item.name}
                 </option>

@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 
-const Card = ({ cardStatus, currentFlashcard, restartHandler }) => {
+const Card = ({ dispatch, state, categoryData }) => {
   const [cardFlip, setCardFlip] = useState(false);
+  const currentWord = categoryData[state.categoryIndex].words[state.wordIndex];
 
-  if (cardStatus === "flashcard") {
+  if (!state.gameFinished) {
     return (
       <div className="card-container">
         <h3 className="card-word-txt">
-          {cardFlip
-            ? currentFlashcard.engTranslation
-            : currentFlashcard.spanWord}
+          {cardFlip ? currentWord.engTranslation : currentWord.spanWord}
         </h3>
         <button className="reveal-btn" onClick={() => setCardFlip(!cardFlip)}>
           Reveal Answer
@@ -21,7 +20,11 @@ const Card = ({ cardStatus, currentFlashcard, restartHandler }) => {
       <div className="card-container">
         <h3 className="card-word-txt">Well Done</h3>
         <p>You have finished the deck, good job!</p>
-        <button className="reveal-btn" onClick={restartHandler}>
+        <button
+          className="reveal-btn"
+          onClick={dispatch({
+            type: "game_restart",
+          })}>
           Restart
         </button>
       </div>

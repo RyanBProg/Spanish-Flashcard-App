@@ -14,18 +14,7 @@ const App = () => {
 
   // controls counters
   let [score, setScore] = useState(0);
-  const [deckSize, setDeckSize] = useState(
-    categoryData[CategoryIndex].words.length
-  );
   let [completedCounter, setCompletedCounter] = useState(0);
-
-  // current card
-  const currentFlashcard = categoryData[CategoryIndex]
-    ? categoryData[CategoryIndex].words[wordIndex]
-    : null;
-
-  // card view
-  const [cardStatus, setCardStatus] = useState("flashcard");
 
   // category change
   const handleCategoryChange = (e) => {
@@ -39,14 +28,12 @@ const App = () => {
       setWordIndex(0);
       setScore(0);
       setCompletedCounter(0);
-      setDeckSize(categoryData[categoryIndex].words.length);
     }
   };
 
   // answer buttons
   const answer = () => {
-    if (completedCounter === deckSize - 1) {
-      setCardStatus("results");
+    if (completedCounter === state.deckSize - 1) {
       setCompletedCounter(completedCounter + 1);
     } else if (
       categoryData[CategoryIndex] &&
@@ -59,48 +46,38 @@ const App = () => {
 
   const correctAns = () => {
     answer();
-    if (completedCounter <= deckSize - 1) {
+    if (completedCounter <= state.deckSize - 1) {
       setScore((score += 1));
     }
   };
 
-  // const handleCorrectAnswer = () => {
-  //   if (!gameState.gameFinished) {
-  //     dispatch({ type: "answered_correct" });
-  //   }
-  // };
+  const handleCorrectAnswer = () => {
+    if (!state.gameFinished) {
+      dispatch({ type: "answered_correct" });
+    }
+  };
 
-  // const handleIncorrectAnswer = () => {
-  //   if (!gameState.gameFinished) {
-  //     dispatch({ type: "answered_incorrect" });
-  //   }
-  // };
+  const handleIncorrectAnswer = () => {
+    if (!state.gameFinished) {
+      dispatch({ type: "answered_incorrect" });
+    }
+  };
 
   // restart game
   const restartHandler = () => {
     setWordIndex(0);
     setScore(0);
     setCompletedCounter(0);
-    setCardStatus("flashcard");
   };
 
   return (
     <div className="App">
-      <Header
-        categoryData={categoryData}
-        handleCategoryChange={handleCategoryChange}
-      />
-      <Card
-        currentFlashcard={currentFlashcard}
-        cardStatus={cardStatus}
-        restartHandler={restartHandler}
-      />
+      <Header categoryData={categoryData} dispatch={dispatch} />
+      <Card dispatch={dispatch} state={state} categoryData={categoryData} />
       <Controls
-        incorrectAns={answer}
-        correctAns={correctAns}
-        score={score}
-        completedCounter={completedCounter}
-        deckSize={deckSize}
+        handleCorrectAnswer={handleCorrectAnswer}
+        handleIncorrectAnswer={handleIncorrectAnswer}
+        state={state}
       />
       <footer className="footer">
         <a className="footer-link" href="">
