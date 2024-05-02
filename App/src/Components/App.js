@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Card from "./Card";
 import Controls from "./Controls";
-import flashcardCategories from "./Data";
+import categoryData from "./categoryData.json";
 
 /*
 - TO DO-
@@ -18,13 +18,13 @@ export default function App() {
   // controls counters
   let [score, setScore] = useState(0);
   const [deckSize, setDeckSize] = useState(
-    flashcardCategories[CategoryIndex].words.length
+    categoryData[CategoryIndex].words.length
   );
   let [completedCounter, setCompletedCounter] = useState(0);
 
   // current card
-  const currentFlashcard = flashcardCategories[CategoryIndex]
-    ? flashcardCategories[CategoryIndex].words[wordIndex]
+  const currentFlashcard = categoryData[CategoryIndex]
+    ? categoryData[CategoryIndex].words[wordIndex]
     : null;
 
   // card view
@@ -33,7 +33,7 @@ export default function App() {
   // category change
   const handleCategoryChange = (e) => {
     const selectedCategoryName = e.target.value;
-    const categoryIndex = flashcardCategories.findIndex(
+    const categoryIndex = categoryData.findIndex(
       (category) => category.name === selectedCategoryName
     );
 
@@ -42,7 +42,7 @@ export default function App() {
       setWordIndex(0);
       setScore(0);
       setCompletedCounter(0);
-      setDeckSize(flashcardCategories[categoryIndex].words.length);
+      setDeckSize(categoryData[categoryIndex].words.length);
     }
   };
 
@@ -52,8 +52,8 @@ export default function App() {
       setCardStatus("results");
       setCompletedCounter(completedCounter + 1);
     } else if (
-      flashcardCategories[CategoryIndex] &&
-      flashcardCategories[CategoryIndex].words[wordIndex + 1]
+      categoryData[CategoryIndex] &&
+      categoryData[CategoryIndex].words[wordIndex + 1]
     ) {
       setWordIndex(wordIndex + 1);
       setCompletedCounter(completedCounter + 1);
@@ -78,7 +78,7 @@ export default function App() {
   return (
     <div className="App">
       <Header
-        flashcardCategories={flashcardCategories}
+        categoryData={categoryData}
         handleCategoryChange={handleCategoryChange}
       />
       <Card

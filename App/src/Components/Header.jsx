@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ flashcardCategories, handleCategoryChange }) => {
+const Header = ({ categoryData, handleCategoryChange }) => {
   return (
     <header className="header">
       <form action="" className="header-form">
@@ -8,7 +8,7 @@ const Header = ({ flashcardCategories, handleCategoryChange }) => {
           <label htmlFor="flashcard-category" className="form-label">
             Select Flashcard Category
             <select className="form-select" onChange={handleCategoryChange}>
-              {flashcardCategories.map((item) => (
+              {categoryData.map((item) => (
                 <option value={item.name} key={item.name}>
                   {item.name}
                 </option>
