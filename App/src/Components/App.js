@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import "./App.css";
 import Header from "./Header";
 import Card from "./Card";
 import Controls from "./Controls";
 import categoryData from "./categoryData.json";
+import { gameInitalState, gameReducer } from "../state/flashcardReducer";
 
-/*
-- TO DO-
--make reveal answer go back to false when the next card is shown
- */
+const App = () => {
+  const [state, dispatch] = useReducer(gameReducer, gameInitalState);
 
-export default function App() {
-  // form category selection
   const [CategoryIndex, setCategoryIndex] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
 
@@ -67,6 +64,18 @@ export default function App() {
     }
   };
 
+  // const handleCorrectAnswer = () => {
+  //   if (!gameState.gameFinished) {
+  //     dispatch({ type: "answered_correct" });
+  //   }
+  // };
+
+  // const handleIncorrectAnswer = () => {
+  //   if (!gameState.gameFinished) {
+  //     dispatch({ type: "answered_incorrect" });
+  //   }
+  // };
+
   // restart game
   const restartHandler = () => {
     setWordIndex(0);
@@ -100,4 +109,6 @@ export default function App() {
       </footer>
     </div>
   );
-}
+};
+
+export default App;
