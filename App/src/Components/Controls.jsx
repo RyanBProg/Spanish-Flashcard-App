@@ -1,6 +1,6 @@
 import React from "react";
 
-const Controls = ({ state, dispatch }) => {
+const Controls = ({ state, dispatch, handleAnimation }) => {
   return (
     <div className="controls-container">
       <button
@@ -8,6 +8,7 @@ const Controls = ({ state, dispatch }) => {
         className="controls-btn correct-btn"
         onClick={() => {
           dispatch({ type: "answered_correct" });
+          handleAnimation();
         }}>
         Correct
       </button>
@@ -16,6 +17,7 @@ const Controls = ({ state, dispatch }) => {
         className="controls-btn incorrect-btn"
         onClick={() => {
           dispatch({ type: "answered_incorrect" });
+          handleAnimation();
         }}>
         Incorrect
       </button>

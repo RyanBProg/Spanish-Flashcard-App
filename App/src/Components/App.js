@@ -10,23 +10,33 @@ import { gameInitalState, gameReducer } from "../state/flashcardReducer";
 const App = () => {
   const [state, dispatch] = useReducer(gameReducer, gameInitalState);
 
-  // for inital game set up
-  useEffect(() => {
-    dispatch({
-      type: "category_chosen",
-      deckIndex: 0,
-    });
-  }, []);
+  const [animate, setAnimate] = useState(false);
+
+  const handleAnimation = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false);
+    }, 1000);
+  };
 
   return (
     <div className="App">
       <Header categoryData={categoryData} dispatch={dispatch} />
       {!state.gameFinished ? (
-        <Card state={state} categoryData={categoryData} />
+        <Card
+          state={state}
+          categoryData={categoryData}
+          dispatch={dispatch}
+          animate={animate}
+        />
       ) : (
         <Results dispatch={dispatch} />
       )}
-      <Controls state={state} dispatch={dispatch} />
+      <Controls
+        state={state}
+        dispatch={dispatch}
+        handleAnimation={handleAnimation}
+      />
       <footer className="footer">
         <a className="footer-link" href="">
           App made by Ryan Bowler

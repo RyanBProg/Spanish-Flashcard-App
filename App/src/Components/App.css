@@ -79,12 +79,12 @@ h3 {
   z-index: -99;
 }
 
-.container:hover > .flashcard-container {
+.card-shuffle-back {
   cursor: pointer;
   animation: 1000ms ease-in 0ms shuffleback;
 }
 
-.container:hover > .flashcard-behind {
+.card-shuffle-forward {
   animation: 500ms ease 500ms shuffleforward;
 }
 
