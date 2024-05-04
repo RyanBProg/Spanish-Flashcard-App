@@ -9,14 +9,25 @@ import { gameInitalState, gameReducer } from "../state/flashcardReducer";
 
 const App = () => {
   const [state, dispatch] = useReducer(gameReducer, gameInitalState);
-
   const [animate, setAnimate] = useState(false);
 
-  const handleAnimation = () => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 1000);
+  const handleCardSwap = (answer) => {
+    if (state.cardFlipped) {
+      dispatch({ type: "card_flipped" });
+      setTimeout(() => {
+        setAnimate(true);
+        setTimeout(() => {
+          setAnimate(false);
+          dispatch({ type: answer });
+        }, 1000);
+      }, 500);
+    } else {
+      setAnimate(true);
+      setTimeout(() => {
+        setAnimate(false);
+        dispatch({ type: answer });
+      }, 1000);
+    }
   };
 
   return (
@@ -35,7 +46,7 @@ const App = () => {
       <Controls
         state={state}
         dispatch={dispatch}
-        handleAnimation={handleAnimation}
+        handleCardSwap={handleCardSwap}
       />
       <footer className="footer">
         <a className="footer-link" href="">

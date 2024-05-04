@@ -18,7 +18,6 @@ const gameReducer = (state, action) => {
         deckSize: categoryData[action.deckIndex].words.length,
       };
     case "answered_correct":
-      // set game finished when answering last question
       if (state.wordIndex === state.deckSize - 1) {
         return {
           ...state,
@@ -34,7 +33,6 @@ const gameReducer = (state, action) => {
         };
       }
     case "answered_incorrect":
-      // set game finished when answering last question
       if (state.wordIndex === state.deckSize - 1) {
         return {
           ...state,

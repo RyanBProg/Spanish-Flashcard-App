@@ -1,14 +1,13 @@
 import React from "react";
 
-const Controls = ({ state, dispatch, handleAnimation }) => {
+const Controls = ({ state, dispatch, handleCardSwap }) => {
   return (
     <div className="controls-container">
       <button
         disabled={state.gameFinished}
         className="controls-btn correct-btn"
         onClick={() => {
-          dispatch({ type: "answered_correct" });
-          handleAnimation();
+          handleCardSwap("answered_correct");
         }}>
         Correct
       </button>
@@ -16,8 +15,7 @@ const Controls = ({ state, dispatch, handleAnimation }) => {
         disabled={state.gameFinished}
         className="controls-btn incorrect-btn"
         onClick={() => {
-          dispatch({ type: "answered_incorrect" });
-          handleAnimation();
+          handleCardSwap("answered_incorrect");
         }}>
         Incorrect
       </button>
