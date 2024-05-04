@@ -31,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <Header categoryData={categoryData} dispatch={dispatch} />
       {!state.gameFinished ? (
         <Card
@@ -48,11 +48,6 @@ const App = () => {
         dispatch={dispatch}
         handleCardSwap={handleCardSwap}
       />
-      <footer className="footer">
-        <a className="footer-link" href="">
-          App made by Ryan Bowler
-        </a>
-      </footer>
     </div>
   );
 };

@@ -4,7 +4,7 @@
   --clr-main: linear-gradient(
     90deg,
     rgba(255, 122, 0, 1) 50%,
-    rgba(252, 164, 69, 1) 100%
+    rgb(255, 147, 32) 100%
   );
   --clr-white: #fff;
   --clr-white-off: #ededed;
@@ -36,10 +36,18 @@ h3 {
   font-weight: 500;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
 .header {
   background: var(--clr-main);
   position: relative;
-  z-index: 99;
+  width: 100%;
 }
 
 .header-form {
@@ -56,18 +64,23 @@ h3 {
 }
 
 .form-label {
-  color: var(--clr-white-off);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-black);
 }
 
 .form-select {
   width: 100%;
-  font-size: 0.9rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
   padding: 0.3rem;
-  border-radius: 5px;
-  color: var(--clr-black-off);
+  border-radius: 3px;
+  color: var(--clr-white);
   border: none;
-  background-color: var(--clr-white-off);
+  background-color: rgba(182, 195, 255, 0.314);
   margin-top: 5px;
+  border: rgba(182, 195, 255, 0.137) 1px solid;
 }
 
 /* card container */
@@ -137,6 +150,7 @@ h3 {
 
 .reveal-txt {
   font-size: 1rem;
+  font-weight: 400;
   color: var(--clr-black-off);
   opacity: 0.5;
 }
@@ -173,11 +187,9 @@ h3 {
 
 /* controls */
 .controls-container {
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
   padding: 20px 0;
-  width: 90%;
-  border-radius: 10px;
   background-color: var(--clr-black-off);
   color: var(--clr-white-off);
 }
@@ -212,19 +224,4 @@ h3 {
 
 .counters {
   margin-top: 10px;
-}
-
-/* footer */
-.footer {
-  background: var(--clr-main);
-  height: 100px;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.footer-link {
-  position: relative;
-  top: 40%;
-  text-decoration: none;
-  color: var(--clr-white-off);
 }
