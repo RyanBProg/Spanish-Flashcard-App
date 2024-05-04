@@ -73,7 +73,7 @@ h3 {
   width: 100%;
   font-family: inherit;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   padding: 0.3rem;
   border-radius: 3px;
   color: var(--clr-white);
@@ -89,7 +89,7 @@ h3 {
   height: 400px;
   width: 300px;
   perspective: 1000px;
-  z-index: -99;
+  z-index: 10;
 }
 
 .card-shuffle-back {
@@ -168,6 +168,19 @@ h3 {
   filter: grayscale(1);
 }
 
+.card-number {
+  position: absolute;
+  opacity: 0.5;
+  font-size: 20px;
+  right: 20px;
+  font-weight: 600;
+}
+
+.card-number span {
+  font-size: 10px;
+  font-weight: 400;
+}
+
 @keyframes shuffleback {
   0% {
     transform: translateX(0%);
@@ -188,24 +201,28 @@ h3 {
 /* controls */
 .controls-container {
   width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background-color: var(--clr-black-off);
-  color: var(--clr-white-off);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .controls-btn {
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: var(--clr-white-off);
-  margin: 0 20px 10px 20px;
-  height: 30px;
-  width: 150px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  width: 170px;
+  height: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 5px;
 }
 
 .correct-btn {
-  background-color: rgb(54, 200, 54);
+  background-color: #16a34a;
 }
 
 .correct-btn:hover {
@@ -214,7 +231,7 @@ h3 {
 }
 
 .incorrect-btn {
-  background-color: rgb(243, 49, 49);
+  background-color: #dc2626;
 }
 
 .incorrect-btn:hover {
@@ -222,6 +239,22 @@ h3 {
   cursor: pointer;
 }
 
-.counters {
-  margin-top: 10px;
+.controls-btn img {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.counter {
+  color: #3a3a3aba;
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+
+.counter span {
+  color: var(--clr-black);
+  font-weight: 600;
+  font-size: 24px;
 }
