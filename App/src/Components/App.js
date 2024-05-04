@@ -19,14 +19,14 @@ const App = () => {
         setTimeout(() => {
           setAnimate(false);
           dispatch({ type: answer });
-        }, 1000);
-      }, 500);
+        }, 500);
+      }, 400);
     } else {
       setAnimate(true);
       setTimeout(() => {
         setAnimate(false);
         dispatch({ type: answer });
-      }, 1000);
+      }, 500);
     }
   };
 

@@ -11,7 +11,7 @@
   --clr-black: #000;
   --clr-black-off: #232323;
 
-  --shad-black: 2px 2px 10px 2px #00000055;
+  --shad-black: 2px 2px 3px 1px #00000055;
 }
 
 *,
@@ -80,20 +80,19 @@ h3 {
 }
 
 .card-shuffle-back {
-  cursor: pointer;
-  animation: 1000ms ease-in 0ms shuffleback;
-}
-
-.card-shuffle-forward {
-  animation: 500ms ease 500ms shuffleforward;
+  animation: 500ms ease-in 0ms shuffleback;
 }
 
 .flashcard-container {
   height: 100%;
   width: 100%;
   position: relative;
-  transition: transform 500ms;
+  transition: transform 400ms;
   transform-style: preserve-3d;
+}
+
+.flashcard:hover {
+  cursor: pointer;
 }
 
 .flashcard {
@@ -101,10 +100,10 @@ h3 {
   width: 100%;
   border-radius: 10px;
   box-shadow: var(--shad-black);
-  background: var(--clr-main);
   position: absolute;
+  background: url(../assets/images/card-paper-bg.jpg);
+  color: var(--clr-black-off);
   text-align: center;
-  color: var(--clr-white-off);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -115,6 +114,7 @@ h3 {
 
 .flashcard-back {
   transform: rotateY(180deg);
+  filter: invert(90%);
 }
 
 .flashcard-flipped {
@@ -122,6 +122,8 @@ h3 {
 }
 
 .flashcard-behind {
+  background: url(../assets/images/card-paper-bg.jpg);
+  color: var(--clr-black-off);
   bottom: 0;
   left: 0;
   z-index: -10;
@@ -130,17 +132,26 @@ h3 {
 .card-word-txt {
   padding-top: 120px;
   font-size: 2rem;
+  font-weight: 600;
 }
 
 .reveal-txt {
   font-size: 1rem;
-  color: var(--clr-white-off);
+  color: var(--clr-black-off);
   opacity: 0.5;
 }
 
 .reveal-btn:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.card-icon {
+  position: absolute;
+  width: 80%;
+  opacity: 0.05;
+  top: 50px;
+  filter: grayscale(1);
 }
 
 @keyframes shuffleback {
@@ -157,17 +168,6 @@ h3 {
   100% {
     transform: translateX(0%);
     z-index: -20;
-  }
-}
-@keyframes shuffleforward {
-  0% {
-    transform: scale3d(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 
