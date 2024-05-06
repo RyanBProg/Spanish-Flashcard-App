@@ -34,20 +34,22 @@ const App = () => {
     <div className="app">
       <Header categoryData={categoryData} dispatch={dispatch} />
       {!state.gameFinished ? (
-        <Card
-          state={state}
-          categoryData={categoryData}
-          dispatch={dispatch}
-          animate={animate}
-        />
+        <>
+          <Card
+            state={state}
+            categoryData={categoryData}
+            dispatch={dispatch}
+            animate={animate}
+          />
+          <Controls
+            state={state}
+            dispatch={dispatch}
+            handleCardSwap={handleCardSwap}
+          />
+        </>
       ) : (
-        <Results dispatch={dispatch} />
+        <Results dispatch={dispatch} state={state} />
       )}
-      <Controls
-        state={state}
-        dispatch={dispatch}
-        handleCardSwap={handleCardSwap}
-      />
     </div>
   );
 };

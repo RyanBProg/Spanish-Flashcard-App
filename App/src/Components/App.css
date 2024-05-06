@@ -239,6 +239,11 @@ h3 {
   cursor: pointer;
 }
 
+.restart-btn {
+  background-color: rgb(255, 147, 32);
+  margin-bottom: 100px;
+}
+
 .controls-btn img {
   display: inline-block;
   height: 25px;
@@ -257,4 +262,26 @@ h3 {
   color: var(--clr-black);
   font-weight: 600;
   font-size: 24px;
+}
+
+.results-container {
+  font-size: 16px;
+  font-weight: 400;
+  color: #232323;
+  text-align: center;
+}
+
+.results-subheading {
+  margin-bottom: 5px;
+}
+
+.results-score {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.results-score span {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.6;
 }
