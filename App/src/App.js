@@ -1,11 +1,11 @@
-import React, { useState, useReducer, useEffect } from "react";
-import "./App.css";
-import Header from "./Header";
-import Card from "./Card";
-import Controls from "./Controls";
-import Results from "./Results";
-import categoryData from "./categoryData.json";
-import { gameInitalState, gameReducer } from "../state/flashcardReducer";
+import React, { useState, useReducer } from "react";
+import "./Components/App.css";
+import Header from "./Components/Header";
+import Card from "./Components/Card";
+import Controls from "./Components/Controls";
+import Results from "./Components/Results";
+import categoryData from "./Components/categoryData.json";
+import { gameInitalState, gameReducer } from "./state/flashcardReducer";
 
 const App = () => {
   const [state, dispatch] = useReducer(gameReducer, gameInitalState);
