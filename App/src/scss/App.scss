@@ -1,0 +1,154 @@
+@use "global";
+@use "flashcard";
+
+.app {
+  @include global.flex-space($direction: column);
+  height: 100vh;
+}
+
+// header
+
+.header {
+  background: global.$clr-main;
+  position: relative;
+  width: 100%;
+}
+
+.header__form {
+  @include global.flex-center($direction: row, $gap: 0.5rem);
+  padding: 1rem 1rem;
+}
+
+.form__select-cont {
+  @include global.flex-center($direction: row, $gap: 1rem);
+}
+
+.form__label {
+  @include global.font($size: 0.8rem, $weight: 600);
+  color: global.$clr-black;
+}
+
+.form__select {
+  @include global.font($size: 1rem, $weight: 400);
+  width: 100%;
+  padding: 0.3rem;
+  margin-top: 5px;
+  color: global.$clr-white;
+  background-color: rgba(182, 195, 255, 0.314);
+  border: none;
+  border: rgba(182, 195, 255, 0.137) 1px solid;
+  border-radius: 3px;
+}
+
+// card container
+
+.container {
+  margin: 3rem auto;
+  height: 400px;
+  width: 300px;
+  perspective: 1000px;
+  z-index: 10;
+}
+
+.container__flashcard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 400ms;
+  transform-style: preserve-3d;
+}
+
+.container__flashcard--flipped {
+  transform: rotateY(180deg);
+}
+
+.container__flashcard--shuffle {
+  animation: 500ms ease-in 0ms shuffleback;
+}
+
+@keyframes shuffleback {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-105%);
+    z-index: 0;
+  }
+  51% {
+    z-index: -20;
+  }
+  100% {
+    transform: translateX(0%);
+    z-index: -20;
+  }
+}
+
+// controls
+
+.container__controls {
+  @include global.flex-center($direction: row, $gap: 20px);
+  width: 100%;
+}
+
+.controls__btn--correct {
+  @include global.contorl-btn($color: global.$clr-white, $bg-color: #16a34a);
+}
+
+.controls__btn--incorrect {
+  @include global.contorl-btn($color: global.$clr-white, $bg-color: #dc2626);
+}
+
+.controls__btn--restart {
+  @include global.contorl-btn(
+    $color: global.$clr-white,
+    $bg-color: rgb(255, 147, 32)
+  );
+  margin-bottom: 100px;
+}
+
+.btn__icon {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.controls__counter {
+  @include global.font($size: 1rem, $weight: 400);
+  color: #3a3a3aba;
+  margin: 20px 0;
+  text-align: center;
+
+  & img {
+    @include global.font($size: 24px, $weight: 600);
+    color: global.$clr-black;
+  }
+}
+
+// results component
+
+.container__results {
+  @include global.font($size: 16px, $weight: 400);
+  color: #232323;
+  text-align: center;
+}
+
+.results__subheading {
+  margin-bottom: 5px;
+}
+
+.results__score {
+  @include global.font($size: 28px, $weight: 600);
+
+  & span {
+    @include global.font($size: 1rem, $weight: 400);
+    opacity: 0.6;
+  }
+}
+
+// media queries
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 1000px) {
+}
