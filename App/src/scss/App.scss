@@ -118,7 +118,7 @@
   margin: 20px 0;
   text-align: center;
 
-  & img {
+  & span {
     @include global.font($size: 24px, $weight: 600);
     color: global.$clr-black;
   }

@@ -5,10 +5,10 @@ import crossIcon from "../assets/images/cross-icon.png";
 const Controls = ({ state, dispatch, handleCardSwap }) => {
   return (
     <div>
-      <div className="controls-container">
+      <div className="container__controls">
         <button
           disabled={state.gameFinished}
-          className="controls-btn correct-btn"
+          className="controls__btn--correct"
           onClick={() => {
             handleCardSwap("answered_correct");
           }}>
@@ -17,7 +17,7 @@ const Controls = ({ state, dispatch, handleCardSwap }) => {
         </button>
         <button
           disabled={state.gameFinished}
-          className="controls-btn incorrect-btn"
+          className="controls__btn--incorrect"
           onClick={() => {
             handleCardSwap("answered_incorrect");
           }}>
@@ -25,7 +25,7 @@ const Controls = ({ state, dispatch, handleCardSwap }) => {
           <img src={crossIcon} alt="cross icon" />
         </button>
       </div>
-      <p className="counter">
+      <p className="controls__counter">
         Score: <span>{state.score}</span>
       </p>
     </div>
