@@ -1,0 +1,65 @@
+@use "global";
+
+.flashcard {
+  @include global.flex-space($direction: column);
+
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: global.$shad-black;
+  position: absolute;
+  background: url(../assets/images/card-paper-bg.jpg);
+  color: global.$clr-black-off;
+  text-align: center;
+  padding: 20px;
+  backface-visibility: hidden;
+
+  & :hover {
+    cursor: pointer;
+  }
+}
+
+.flashcard__number {
+  position: absolute;
+  opacity: 0.5;
+  @include global.font($size: 20px, $weight: 600);
+  right: 20px;
+
+  & span {
+    @include global.font($size: 10px, $weight: 400);
+  }
+}
+
+.flashcard__icon {
+  position: absolute;
+  width: 80%;
+  opacity: 0.05;
+  top: 50px;
+  filter: grayscale(1);
+}
+
+.flashcard__text {
+  padding-top: 120px;
+  @include global.font($size: 2rem, $weight: 600);
+}
+
+.flashcard__reveal-text {
+  color: global.$clr-black-off;
+  opacity: 0.5;
+  @include global.font($size: 1rem, $weight: 400);
+}
+
+// flashcard states
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  filter: invert(90%);
+}
+
+.flashcard-behind {
+  background: url(../assets/images/card-paper-bg.jpg);
+  color: global.$clr-black-off;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+}
