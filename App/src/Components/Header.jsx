@@ -3,12 +3,12 @@ import React from "react";
 const Header = ({ categoryData, dispatch }) => {
   return (
     <header className="header">
-      <form action="" className="header-form">
-        <div className="form-select-container">
-          <label htmlFor="flashcard-category" className="form-label">
+      <form action="" className="header__form">
+        <div className="form__select--cont">
+          <label htmlFor="flashcard-category" className="form__label">
             Select Flashcard Category
             <select
-              className="form-select"
+              className="form__select"
               onChange={(e) => {
                 dispatch({
                   type: "category_chosen",
