@@ -16,7 +16,7 @@ $shad-black: 2px 2px 3px 1px #00000055;
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6rem;
-  background: var(--clr-white-off);
+  background: $clr-white-off;
 }
 
 p {
@@ -54,12 +54,16 @@ p {
 
   border: none;
   border-radius: 3px;
-  color: var($clr-white);
+  color: $clr-white;
   width: 170px;
   height: 40px;
 
-  & :hover {
+  &:hover {
     opacity: 0.8;
     cursor: pointer;
+  }
+
+  & img {
+    width: 20px;
   }
 }
