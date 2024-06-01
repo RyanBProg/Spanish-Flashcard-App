@@ -33,6 +33,13 @@ p {
   gap: $gap;
 }
 
+@mixin flex-space($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin font($size, $weight) {
   font-size: $size;
   font-weight: $weight;
@@ -50,7 +57,6 @@ p {
   color: var($clr-white);
   width: 170px;
   height: 40px;
-  padding-left: 5px;
 
   & :hover {
     opacity: 0.8;
