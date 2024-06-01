@@ -11,18 +11,6 @@ $clr-black: #000;
 $clr-black-off: #232323;
 $shad-black: 2px 2px 3px 1px #00000055;
 
-// *** standards *** //
-
-body {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.6rem;
-  background: $clr-white-off;
-}
-
-p {
-  font-size: 1rem;
-}
-
 // *** mix-ins *** //
 
 @mixin flex-center($direction, $gap) {
@@ -49,8 +37,8 @@ p {
   background: $bg-color;
   color: $color;
 
-  @include flex-center($direction: row, $gap: 10px);
-  @include font($size: 1.2rem, $weight: 600);
+  @include flex-center(row, 10px);
+  @include font(1.2rem, 600);
 
   border: none;
   border-radius: 3px;
@@ -66,4 +54,20 @@ p {
   & img {
     width: 20px;
   }
+}
+
+// *** standards *** //
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6rem;
+  background: $clr-white-off;
+}
+
+h1 {
+  @include font(2.25rem, 600);
+}
+
+p {
+  @include font(1rem, 400);
 }

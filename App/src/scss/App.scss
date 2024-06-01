@@ -2,7 +2,7 @@
 @use "flashcard";
 
 .app {
-  @include global.flex-space($direction: column);
+  @include global.flex-space(column);
   height: 100vh;
 }
 
@@ -15,21 +15,21 @@
 }
 
 .header__form {
-  @include global.flex-center($direction: row, $gap: 0.5rem);
+  @include global.flex-center(row, 0.5rem);
   padding: 1rem 1rem;
 }
 
 .form__select-cont {
-  @include global.flex-center($direction: row, $gap: 1rem);
+  @include global.flex-center(row, 1rem);
 }
 
 .form__label {
-  @include global.font($size: 0.8rem, $weight: 600);
+  @include global.font(0.8rem, 600);
   color: global.$clr-black;
 }
 
 .form__select {
-  @include global.font($size: 1rem, $weight: 400);
+  @include global.font(1rem, 400);
   width: 100%;
   padding: 0.3rem;
   margin-top: 5px;
@@ -86,16 +86,16 @@
 // controls
 
 .container__controls {
-  @include global.flex-center($direction: row, $gap: 20px);
+  @include global.flex-center(row, 20px);
   width: 100%;
 }
 
 .controls__btn--correct {
-  @include global.contorl-btn($color: global.$clr-white, $bg-color: #16a34a);
+  @include global.contorl-btn(global.$clr-white, #16a34a);
 }
 
 .controls__btn--incorrect {
-  @include global.contorl-btn($color: global.$clr-white, $bg-color: #dc2626);
+  @include global.contorl-btn(global.$clr-white, #dc2626);
 }
 
 .controls__btn--restart {
@@ -113,13 +113,13 @@
 }
 
 .controls__counter {
-  @include global.font($size: 1rem, $weight: 400);
+  @include global.font(1rem, 400);
   color: #3a3a3aba;
   margin: 20px 0;
   text-align: center;
 
   & span {
-    @include global.font($size: 24px, $weight: 600);
+    @include global.font(24px, 600);
     color: global.$clr-black;
   }
 }
@@ -127,7 +127,7 @@
 // results component
 
 .container__results {
-  @include global.font($size: 16px, $weight: 400);
+  @include global.font(16px, 400);
   color: #232323;
   text-align: center;
 }
@@ -137,10 +137,10 @@
 }
 
 .results__score {
-  @include global.font($size: 28px, $weight: 600);
+  @include global.font(28px, 600);
 
   & span {
-    @include global.font($size: 1rem, $weight: 400);
+    @include global.font(1rem, 400);
     opacity: 0.6;
   }
 }
