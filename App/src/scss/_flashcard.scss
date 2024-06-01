@@ -51,15 +51,15 @@
 
 // flashcard states
 
-.flashcard-back {
+.flashcard--back {
   transform: rotateY(180deg);
   filter: invert(90%);
 }
 
-.flashcard-behind {
+.flashcard--behind {
   background: url(../assets/images/card-paper-bg.jpg);
   color: global.$clr-black-off;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: -10;
 }

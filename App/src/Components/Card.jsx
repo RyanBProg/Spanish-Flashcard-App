@@ -6,22 +6,30 @@ import sagradaIcon from "../assets/images/sagrada-familia-icon.png";
 const BackCard = ({ categoryData, state }) => {
   if (state.wordIndex === state.deckSize - 1) {
     return (
-      <img src={sagradaIcon} alt="sagrada familia icon" className="card-icon" />
+      <img
+        src={sagradaIcon}
+        alt="sagrada familia icon"
+        className="flashcard__icon"
+      />
     );
   } else {
     return (
       <>
-        <img src={spainFlagIcon} alt="spain flag icon" className="card-icon" />
-        <p className="card-number">
+        <img
+          src={spainFlagIcon}
+          alt="spain flag icon"
+          className="flashcard__icon"
+        />
+        <p className="flashcard__number">
           {state.wordIndex + 2}/<span>{state.deckSize}</span>
         </p>
-        <h3 className="card-word-txt">
+        <h3 className="flashcard__text">
           {
             categoryData[state.categoryIndex].words[state.wordIndex + 1]
               .spanWord
           }
         </h3>
-        <p className="reveal-txt">Click to flip card</p>
+        <p className="flashcard__reveal-txt">Click to flip card</p>
       </>
     );
   }
@@ -33,9 +41,9 @@ const Card = ({ state, categoryData, dispatch, animate }) => {
   return (
     <div className="container">
       <div
-        className={`flashcard-container ${animate ? "card-shuffle-back" : ""} ${
-          state.cardFlipped ? "flashcard-flipped" : ""
-        }`}
+        className={`container__flashcard ${
+          animate ? "container__flashcard--shuffle" : ""
+        } ${state.cardFlipped ? "container__flashcard--flipped" : ""}`}
         onClick={() => {
           dispatch({ type: "card_flipped" });
         }}>
@@ -43,24 +51,28 @@ const Card = ({ state, categoryData, dispatch, animate }) => {
           <img
             src={spainFlagIcon}
             alt="spain flag icon"
-            className="card-icon"
+            className="flashcard__icon"
           />
-          <p className="card-number">
+          <p className="flashcard__number">
             {state.wordIndex + 1}/<span>{state.deckSize}</span>
           </p>
-          <h3 className="card-word-txt">{currentWord.spanWord}</h3>
-          <p className="reveal-txt">Click to flip card</p>
+          <h3 className="flashcard__text">{currentWord.spanWord}</h3>
+          <p className="flashcard__reveal">Click to flip card</p>
         </div>
-        <div className={`flashcard flashcard-back`}>
-          <img src={spainMapIcon} alt="spain map icon" className="card-icon" />
-          <p className="card-number">
+        <div className={`flashcard flashcard--back`}>
+          <img
+            src={spainMapIcon}
+            alt="spain map icon"
+            className="flashcard__icon"
+          />
+          <p className="flashcard__number">
             {state.wordIndex + 1}/<span>{state.deckSize}</span>
           </p>
-          <h3 className="card-word-txt">{currentWord.engTranslation}</h3>
-          <p className="reveal-txt">Click to flip card</p>
+          <h3 className="flashcard__text">{currentWord.engTranslation}</h3>
+          <p className="flashcard__reveal">Click to flip card</p>
         </div>
       </div>
-      <div className="flashcard flashcard-behind">
+      <div className="flashcard flashcard--behind">
         <BackCard categoryData={categoryData} state={state} />
       </div>
     </div>
