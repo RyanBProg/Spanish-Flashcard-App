@@ -99,10 +99,7 @@
 }
 
 .controls__btn--restart {
-  @include global.contorl-btn(
-    $color: global.$clr-white,
-    $bg-color: rgb(255, 147, 32)
-  );
+  @include global.contorl-btn(global.$clr-white, rgb(255, 147, 32));
   margin-bottom: 100px;
 }
 

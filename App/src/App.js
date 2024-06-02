@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from "react";
-import "./Components/App.css";
+import "./scss/App.scss";
 import Header from "./Components/Header";
 import Card from "./Components/Card";
 import Controls from "./Components/Controls";
