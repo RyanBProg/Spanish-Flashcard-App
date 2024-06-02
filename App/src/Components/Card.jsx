@@ -29,7 +29,7 @@ const BackCard = ({ categoryData, state }) => {
               .spanWord
           }
         </h3>
-        <p className="flashcard__reveal-txt">Click to flip card</p>
+        <p className="flashcard__reveal-text">Click to flip card</p>
       </>
     );
   }
@@ -57,7 +57,7 @@ const Card = ({ state, categoryData, dispatch, animate }) => {
             {state.wordIndex + 1}/<span>{state.deckSize}</span>
           </p>
           <h3 className="flashcard__text">{currentWord.spanWord}</h3>
-          <p className="flashcard__reveal">Click to flip card</p>
+          <p className="flashcard__reveal-text">Click to flip card</p>
         </div>
         <div className={`flashcard flashcard--back`}>
           <img
@@ -69,7 +69,7 @@ const Card = ({ state, categoryData, dispatch, animate }) => {
             {state.wordIndex + 1}/<span>{state.deckSize}</span>
           </p>
           <h3 className="flashcard__text">{currentWord.engTranslation}</h3>
-          <p className="flashcard__reveal">Click to flip card</p>
+          <p className="flashcard__reveal-text">Click to flip card</p>
         </div>
       </div>
       <div className="flashcard flashcard--behind">
